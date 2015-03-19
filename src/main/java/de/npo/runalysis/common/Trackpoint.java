@@ -1,4 +1,4 @@
-package de.npo.common;
+package de.npo.runalysis.common;
 
 import java.util.Date;
 
