@@ -13,7 +13,7 @@ import java.util.Date;
  * 
  * @author Niklas Polke
  */
-public interface Trackpoint extends Comparable<Trackpoint> {
+public interface TrackPoint extends Comparable<TrackPoint> {
 
 	Date getTime();
 

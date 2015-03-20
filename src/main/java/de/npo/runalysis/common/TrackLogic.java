@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public interface TrackLogic {
 
-	void handleNewTrackpoint(Trackpoint trackpoint);
+	void handleNewTrackpoint(TrackPoint trackPoint);
 
 	Map<Date, Double> calcPaces(double timeInterval);
 

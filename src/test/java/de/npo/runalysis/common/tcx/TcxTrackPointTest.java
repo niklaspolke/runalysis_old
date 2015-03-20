@@ -18,7 +18,7 @@ import org.junit.Test;
  * 
  * @author Niklas Polke
  */
-public class TcxTrackpointTest {
+public class TcxTrackPointTest {
 
 	private static final double DELTA_ACCEPTED = 0.001;
 

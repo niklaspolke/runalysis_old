@@ -18,7 +18,7 @@ import de.npo.runalysis.common.TrackLogic;
  */
 public interface TcxTrackLogic extends TrackLogic {
 
-	void handleLap();
+	void handleLap(TrackLap trackLap);
 
 	List<TrackLap> getLaps();
 }

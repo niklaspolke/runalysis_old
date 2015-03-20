@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import de.npo.runalysis.common.Trackpoint;
+import de.npo.runalysis.common.TrackPoint;
 
 /**
  * Copyright (C) 2015 Niklas Polke<br/>
@@ -18,7 +18,7 @@ import de.npo.runalysis.common.Trackpoint;
  * 
  * @author Niklas Polke
  */
-public class TcxTrackpoint implements Trackpoint {
+public class TcxTrackpoint implements TrackPoint {
 
 	public static final String DATE_TIME_FORMAT = "dd-MM-yyyy HH:mm:ss";
 	public static final String DEGREES_FORMAT = "##0.0000000";
@@ -76,7 +76,7 @@ public class TcxTrackpoint implements Trackpoint {
 	}
 
 	@Override
-	public int compareTo(Trackpoint other) {
+	public int compareTo(TrackPoint other) {
 		if (other == null) {
 			throw new NullPointerException("Trackpoint.compareTo(null)");
 		} else {
