@@ -18,7 +18,7 @@ import de.npo.runalysis.common.TrackPoint;
  * 
  * @author Niklas Polke
  */
-public class TcxTrackpoint implements TrackPoint {
+public class TcxTrackPoint implements TrackPoint {
 
 	public static final String DATE_TIME_FORMAT = "dd-MM-yyyy HH:mm:ss";
 	public static final String DEGREES_FORMAT = "##0.0000000";
@@ -32,7 +32,7 @@ public class TcxTrackpoint implements TrackPoint {
 	private final int altitudeMeters;
 	private final double distanceMeters;
 
-	public TcxTrackpoint(final Date time, final double longitudeDegrees, final double latitudeDegrees, final int altitudeMeters,
+	public TcxTrackPoint(final Date time, final double longitudeDegrees, final double latitudeDegrees, final int altitudeMeters,
 			final double distanceMeters) {
 		if (time != null) {
 			this.time = (Date) time.clone();

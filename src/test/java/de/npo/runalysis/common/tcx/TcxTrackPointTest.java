@@ -28,11 +28,11 @@ public class TcxTrackPointTest {
 	private static final int TEST1_ALTITUDE = 18;
 	private static final double TEST1_DISTANCE = 34.5;
 
-	private static TcxTrackpoint test1TcxTrackpoint;
+	private static TcxTrackPoint test1TcxTrackpoint;
 
 	@BeforeClass
 	public static void setup() {
-		test1TcxTrackpoint = new TcxTrackpoint(TEST1_DATE, TEST1_LONGITUDE, TEST1_LATITUDE, TEST1_ALTITUDE, TEST1_DISTANCE);
+		test1TcxTrackpoint = new TcxTrackPoint(TEST1_DATE, TEST1_LONGITUDE, TEST1_LATITUDE, TEST1_ALTITUDE, TEST1_DISTANCE);
 	}
 
 	@Test
@@ -43,7 +43,7 @@ public class TcxTrackPointTest {
 
 	@Test
 	public void timeNull() {
-		TcxTrackpoint testNullTime = new TcxTrackpoint(null, TEST1_LONGITUDE, TEST1_LATITUDE, TEST1_ALTITUDE, TEST1_DISTANCE);
+		TcxTrackPoint testNullTime = new TcxTrackPoint(null, TEST1_LONGITUDE, TEST1_LATITUDE, TEST1_ALTITUDE, TEST1_DISTANCE);
 		assertNull(testNullTime.getTime());
 		assertEquals(TEST1_LONGITUDE, testNullTime.getLongitudeDegrees(), DELTA_ACCEPTED);
 		assertEquals(TEST1_LATITUDE, testNullTime.getLatitudeDegrees(), DELTA_ACCEPTED);
@@ -73,28 +73,28 @@ public class TcxTrackPointTest {
 
 	@Test(expected = NullPointerException.class)
 	public void compareTo_nullPointsInFront() {
-		TcxTrackpoint nullPoint = null;
+		TcxTrackPoint nullPoint = null;
 		test1TcxTrackpoint.compareTo(nullPoint);
 		fail();
 	}
 
 	@Test
 	public void compareTo_nullTimesInFront() {
-		TcxTrackpoint pointNoTime = new TcxTrackpoint(null, TEST1_LONGITUDE, TEST1_LATITUDE, TEST1_ALTITUDE, TEST1_DISTANCE);
+		TcxTrackPoint pointNoTime = new TcxTrackPoint(null, TEST1_LONGITUDE, TEST1_LATITUDE, TEST1_ALTITUDE, TEST1_DISTANCE);
 		assertTrue(test1TcxTrackpoint.compareTo(pointNoTime) > 0);
 		assertTrue(pointNoTime.compareTo(test1TcxTrackpoint) < 0);
 	}
 
 	@Test
 	public void compareTo_equalTimes() {
-		TcxTrackpoint pointEqualTime = new TcxTrackpoint(TEST1_DATE, TEST1_LONGITUDE, TEST1_LATITUDE, TEST1_ALTITUDE, TEST1_DISTANCE);
+		TcxTrackPoint pointEqualTime = new TcxTrackPoint(TEST1_DATE, TEST1_LONGITUDE, TEST1_LATITUDE, TEST1_ALTITUDE, TEST1_DISTANCE);
 		assertTrue(test1TcxTrackpoint.compareTo(pointEqualTime) == 0);
 		assertTrue(pointEqualTime.compareTo(test1TcxTrackpoint) == 0);
 	}
 
 	@Test
 	public void compareTo_differentTimes() {
-		TcxTrackpoint pointEarlierTime = new TcxTrackpoint(new Date(TEST1_DATE.getTime() - 1000), TEST1_LONGITUDE, TEST1_LATITUDE,
+		TcxTrackPoint pointEarlierTime = new TcxTrackPoint(new Date(TEST1_DATE.getTime() - 1000), TEST1_LONGITUDE, TEST1_LATITUDE,
 				TEST1_ALTITUDE, TEST1_DISTANCE);
 		assertTrue(test1TcxTrackpoint.compareTo(pointEarlierTime) > 0);
 		assertTrue(pointEarlierTime.compareTo(test1TcxTrackpoint) < 0);
